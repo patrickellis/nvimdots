@@ -14,7 +14,7 @@ settings["format_on_save"] = true
 
 -- Set it to false if the notification after formatting is annoying.
 ---@type boolean
-settings["format_notify"] = true
+settings["format_notify"] = false
 
 -- Set it to true if you prefer formatting ONLY the *changed lines* as defined by your version control system.
 -- NOTE: This entry will only be respected if:
@@ -36,7 +36,7 @@ settings["format_disabled_dirs"] = {
 -- Set it to false if diagnostics virtual text is annoying.
 -- If disabled, you may browse lsp diagnostics using trouble.nvim (press `gt` to toggle it).
 ---@type boolean
-settings["diagnostics_virtual_text"] = true
+settings["diagnostics_virtual_text"] = false
 
 -- Set it to one of the values below if you want to change the visible severity level of lsp diagnostics.
 -- Priority: `Error` > `Warning` > `Information` > `Hint`.
@@ -156,6 +156,7 @@ settings["treesitter_deps"] = {
 	"python",
 	"rust",
 	"typescript",
+	"vim",
 	"vimdoc",
 	"vue",
 	"yaml",
