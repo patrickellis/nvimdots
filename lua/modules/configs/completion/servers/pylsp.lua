@@ -7,12 +7,12 @@ return {
 			plugins = {
 				-- Lint
 				ruff = {
-					enabled = true,
+					enabled = false,
 					extendSelect = { "ALL" },
 					format = { "ALL" },
 					ignore = {}, -- error codes to ignore
 					-- TODO: investigate why config path doesn't work / validate that it is broken
-					-- config = "$HOME/.config/python/pyproject.toml",
+					config = "$HOME/.config/python/pyproject.toml",
 				},
 				flake8 = { enabled = false },
 				pyflakes = { enabled = false },
@@ -28,19 +28,20 @@ return {
 					live_mode = false,
 				},
 				mccabe = { enabled = false },
-				pylint = {
-					enabled = true,
-					executable = "pylint",
-					args = {
-						"--rcfile $HOME/.config/python/pylintrc",
-					},
-				},
+				-- pylint = {
+				-- 	enabled = false,
+				-- 	executable = "pylint",
+				-- 	-- Causes an error.
+				-- 	-- args = {
+				-- 	-- 	"--rcfile $HOME/.config/python/pylintrc",
+				-- 	-- },
+				-- },
 
 				-- Code refactor
 				rope = { enabled = true },
 
 				-- Formatting
-				-- black = { enabled = true },
+				black = { enabled = false },
 				pyls_isort = { enabled = false },
 				autopep8 = { enabled = false },
 				yapf = { enabled = false },
