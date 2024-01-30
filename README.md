@@ -1,5 +1,5 @@
 <h1 align="center">
-    nvimdots
+    nvimdots - patrickellis
     <br>
     <a href="https://github.com/neovim/neovim/releases/tag/stable">
     <img
