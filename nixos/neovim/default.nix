@@ -12,8 +12,8 @@ in
     programs.neovim = {
       nvimdots = {
         enable = mkEnableOption ''
-          Activate "ayamir/nvimdots".
-          Have a look at https://github.com/ayamir/nvimdots for details
+          Activate "patrickellis/nvimdots".
+          Have a look at https://github.com/patrickellis/nvimdots for details
         '';
         setBuildEnv = mkEnableOption ''
           Sets environment variables that resolve build dependencies as required by `mason.nvim` and `nvim-treesitter`

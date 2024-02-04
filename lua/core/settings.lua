@@ -190,7 +190,7 @@ settings["neovide_config"] = {
 
 -- Set the dashboard startup image here
 -- You can generate the ascii image using: https://github.com/TheZoraiz/ascii-image-converter
--- More info: https://github.com/ayamir/nvimdots/wiki/Issues#change-dashboard-startup-image
+-- More info: https://github.com/patrickellis/nvimdots/wiki/Issues#change-dashboard-startup-image
 ---@type string[]
 settings["dashboard_image"] = {
 	[[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],

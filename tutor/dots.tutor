@@ -23,7 +23,7 @@ switch between them. Also, `<A-n>`{normal}(n meaning No) can be used to switch t
 target buffer directly.
 
 Note: For macOS, you need to remap your `<Option>`{normal} to `<Alt>`{normal} following the
-instructions in https://github.com/ayamir/nvimdots/issues/344.
+instructions in https://github.com/patrickellis/nvimdots/issues/344.
 
 You can use `<C-n>`{normal} to open/close file explorer which will appear on the left.
 Now move cursor to the line of **lua** folder, press `o`{normal} to open it, repeat this
@@ -139,7 +139,7 @@ Of course you will be curious about where you can master the rest 40%. And the
 answer relies on the basic nvim motions. We enhanced lots of nvim's default
 abilities that you can use those abilities naturally if you were already an
 experienced nvim user.
-You can also check https://github.com/ayamir/nvimdots/wiki for more!
+You can also check https://github.com/patrickellis/nvimdots/wiki for more!
 
 Last but not least, you can press `<C-p>` in noraml mode to call the command
 panel then search for keymaps any time you want!

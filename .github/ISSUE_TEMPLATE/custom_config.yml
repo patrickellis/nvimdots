@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        _Before requesting:_ Make sure you've read through our [Wiki: Usage](https://github.com/ayamir/nvimdots/wiki/Usage) before you start to add things to nvimdots!
+        _Before requesting:_ Make sure you've read through our [Wiki: Usage](https://github.com/patrickellis/nvimdots/wiki/Usage) before you start to add things to nvimdots!
 
   - type: checkboxes
     id: is-latest-commit
@@ -19,7 +19,7 @@ body:
     id: prerequisites-done
     attributes:
       label: "Following prerequisites"
-      description: "I've checked everything mentioned in [Wiki: Prerequisites](https://github.com/ayamir/nvimdots/wiki/Prerequisites)."
+      description: "I've checked everything mentioned in [Wiki: Prerequisites](https://github.com/patrickellis/nvimdots/wiki/Prerequisites)."
       options:
         - label: "Confirm"
           required: true
