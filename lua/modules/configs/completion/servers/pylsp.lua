@@ -31,10 +31,10 @@ return {
 				-- pylint = {
 				-- 	enabled = false,
 				-- 	executable = "pylint",
-				-- 	-- Causes an error.
-				-- 	-- args = {
-				-- 	-- 	"--rcfile $HOME/.config/python/pylintrc",
-				-- 	-- },
+				-- Causes an error.
+				-- args = {
+				-- 	"--rcfile $HOME/.config/python/pylintrc",
+				-- },
 				-- },
 
 				-- Code refactor

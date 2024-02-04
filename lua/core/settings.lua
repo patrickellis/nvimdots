@@ -6,7 +6,7 @@ settings["use_ssh"] = true
 
 -- Set it to false if you don't use copilot
 ---@type boolean
-settings["use_copilot"] = false
+settings["use_copilot"] = true
 
 -- Set it to false if there are no need to format on save.
 ---@type boolean
@@ -22,7 +22,7 @@ settings["format_notify"] = false
 --  > Any of the server attached to that buffer supports |DocumentRangeFormattingProvider| server capability.
 -- Otherwise Neovim would fall back to format the whole buffer, and a warning will be issued.
 ---@type boolean
-settings["format_modifications_only"] = false
+settings["format_modifications_only"] = true
 
 -- Set the format disabled directories here, files under these dirs won't be formatted on save.
 --- NOTE: Directories may contain regular expressions (grammar: vim). |regexp|
@@ -106,7 +106,7 @@ settings["lsp_deps"] = {
 	"jsonls",
 	"lua_ls",
 	"pylsp",
-	-- "gopls",
+	"gopls",
 }
 
 -- Set the general-purpose servers that will be installed during bootstrap here.
