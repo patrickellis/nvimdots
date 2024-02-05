@@ -36,4 +36,8 @@ lang["chrisbra/csv.vim"] = {
 	lazy = true,
 	ft = "csv",
 }
+lang["hashivim/vim-terraform"] = {
+	lazy = true,
+	ft = "terraform",
+}
 return lang
