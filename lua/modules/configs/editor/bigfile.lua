@@ -1,3 +1,5 @@
+-- Add additional capabilities supported by nvim-cmp
+
 return function()
 	local ftdetect = {
 		name = "ftdetect",

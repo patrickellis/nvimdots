@@ -15,14 +15,14 @@ local function load_options()
 		breakat = [[\ \	;:,!?]],
 		breakindentopt = "shift:2,min:20",
 		clipboard = "unnamedplus",
-		cmdheight = 1, -- 0, 1, 2
+		cmdheight = 0, -- 0, 1, 2
 		cmdwinheight = 5,
 		complete = ".,w,b,k",
 		completeopt = "menuone,noselect",
-		concealcursor = "niv",
+		concealcursor = "",
 		conceallevel = 0,
 		cursorcolumn = true,
-		cursorline = true,
+		cursorline = false,
 		diffopt = "filler,iwhite,internal,linematch:60,algorithm:patience",
 		display = "lastline",
 		encoding = "utf-8",
@@ -88,7 +88,7 @@ local function load_options()
 		undodir = global.cache_dir .. "undo/",
 		undofile = true,
 		-- Please do NOT set `updatetime` to above 500, otherwise most plugins may not function correctly
-		updatetime = 200,
+		updatetime = 50,
 		viewoptions = "folds,cursor,curdir,slash,unix",
 		virtualedit = "block",
 		visualbell = true,

@@ -29,8 +29,6 @@ tool["ibhagwan/smartyank.nvim"] = {
 }
 tool["michaelb/sniprun"] = {
 	lazy = true,
-	-- You need to cd to `~/.local/share/nvim/site/lazy/sniprun/` and execute `bash ./install.sh`,
-	-- if you encountered error about no executable sniprun found.
 	build = "bash ./install.sh",
 	cmd = { "SnipRun", "SnipReset", "SnipInfo" },
 	config = require("tool.sniprun"),
@@ -113,4 +111,8 @@ tool["mfussenegger/nvim-dap"] = {
 	},
 }
 
+tool["christoomey/vim-tmux-navigator"] = {
+	lazy = true,
+	config = require("tool.vim-tmux-navigator"),
+}
 return tool

@@ -24,7 +24,8 @@ return function()
 			local universal_bg = require("core.settings").transparent_background and "NONE" or colors.mantle
 			return {
 				normal = {
-					a = { fg = colors.lavender, bg = colors.surface0, gui = "bold" },
+					a = { fg = "#1c1d21", bg = "#b4befe", gui = "bold" },
+					-- a = { fg = colors.lavender, bg = colors.surface0, gui = "bold" },
 					b = { fg = colors.text, bg = universal_bg },
 					c = { fg = colors.text, bg = universal_bg },
 				},
@@ -272,6 +273,15 @@ return function()
 			disabled_filetypes = { statusline = { "alpha" } },
 			component_separators = "",
 			section_separators = { left = "", right = "" },
+			-- component_separators = { left = "", right = "" },
+			-- section_separators = { left = "", right = "" },
+			always_divide_middle = true,
+			globalstatus = false,
+			refresh = {
+				statusline = 1000,
+				tabline = 1000,
+				winbar = 1000,
+			},
 		},
 		sections = {
 			lualine_a = { "mode" },

@@ -8,10 +8,10 @@ completion["neovim/nvim-lspconfig"] = {
 	dependencies = {
 		{ "williamboman/mason.nvim" },
 		{ "williamboman/mason-lspconfig.nvim" },
-		{
-			"Jint-lzxy/lsp_signature.nvim",
-			config = require("completion.lsp-signature"),
-		},
+		--	{
+		-- "Jint-lzxy/lsp_signature.nvim",
+		-- config = require("completion.lsp-signature"),
+		--	},
 	},
 }
 completion["nvimdev/lspsaga.nvim"] = {
@@ -63,6 +63,8 @@ completion["hrsh7th/nvim-cmp"] = {
 		{ "hrsh7th/cmp-buffer" },
 		{ "kdheepak/cmp-latex-symbols" },
 		{ "ray-x/cmp-treesitter", commit = "c8e3a74" },
+		{ "hrsh7th/cmp-nvim-lsp-signature-help" },
+		{ "davidsierradz/cmp-conventionalcommits" },
 		-- { "tzachar/cmp-tabnine", build = "./install.sh", config = require("completion.tabnine") },
 		-- {
 		-- 	"jcdickinson/codeium.nvim",
@@ -73,6 +75,25 @@ completion["hrsh7th/nvim-cmp"] = {
 		-- 	config = require("completion.codeium"),
 		-- },
 	},
+}
+completion["nvim-orgmode/orgmode"] = {
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+		lazy = true,
+	},
+	event = "VeryLazy",
+	config = function()
+		require("orgmode").setup_ts_grammar()
+
+		-- Setup treesitter
+		require("nvim-treesitter.configs").setup({
+			highlight = {
+				enable = true,
+				additional_vim_regex_highlighting = { "org" },
+			},
+			ensure_installed = { "org" },
+		})
+	end,
 }
 if use_copilot then
 	completion["zbirenbaum/copilot.lua"] = {

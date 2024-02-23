@@ -1,6 +1,5 @@
 local settings = require("core.settings")
 local global = require("core.global")
-
 -- Create cache dir and data dirs
 local createdir = function()
 	local data_dir = {
@@ -92,6 +91,19 @@ local neovide_config = function()
 	end
 end
 
+local terraform_format_on_save = function()
+	vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
+	vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
+	vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
+	vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
+	vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
+
+	-- Add the following to automatically format *.tf and *.tfvars files with terraform fmt on save and align settings.
+
+	vim.cmd([[let g:terraform_fmt_on_save=1]])
+	vim.cmd([[let g:terraform_align=1]])
+end
+
 local clipboard_config = function()
 	if global.is_mac then
 		vim.g.clipboard = {
@@ -167,3 +179,23 @@ local load_core = function()
 end
 
 load_core()
+
+-- Once you have the nvim-cmp and lspconfig setup Reference Link , Add the following to your init.lua file for Neovim to recognize the hcl and terraform filetype
+
+-- I use the following keymaps to quickly call the Terraform commmands in Normal mode.
+
+-- keymap("n", "<leader>ti", ":!terraform init<CR>", opts)
+-- keymap("n", "<leader>tv", ":!terraform validate<CR>", opts)
+-- keymap("n", "<leader>tp", ":!terraform plan<CR>", opts)
+-- keymap("n", "<leader>taa", ":!terraform apply -auto-approve<CR>", opts)
+-- Call the terraformls and tflint PID to attach as client to the Neovim LSP
+
+-- Reference Links to enable the language servers
+
+-- terraformls
+-- tflint
+-- Tree-sitter grammar for HCL language
+
+-- I would highly recommend installation of HCL grammar for beautiful highlighting of all the *.tf and hcl files.
+
+-- Run :TSInstall hcl as long as you have installed and configured the Tree-sitter plugin - link

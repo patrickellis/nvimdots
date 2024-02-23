@@ -130,9 +130,9 @@ return function()
 		},
 		-- You can set mappings if you want
 		mapping = cmp.mapping.preset.insert({
-			["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
-			["<C-p>"] = cmp.mapping.select_prev_item(),
-			["<C-n>"] = cmp.mapping.select_next_item(),
+			["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+			["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+			["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
 			["<C-d>"] = cmp.mapping.scroll_docs(-4),
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
 			["<C-w>"] = cmp.mapping.close(),
@@ -155,6 +155,23 @@ return function()
 				end
 			end, { "i", "s" }),
 		}),
+
+		mapping = cmp.mapping.preset.insert({
+			["<C-b>"] = cmp.mapping.scroll_docs(-4),
+			["<C-f>"] = cmp.mapping.scroll_docs(4),
+			["<C-Space>"] = cmp.mapping.complete(),
+			["<C-e>"] = cmp.mapping.abort(),
+			["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+			["<S-CR>"] = cmp.mapping.confirm({
+				behavior = cmp.ConfirmBehavior.Replace,
+				select = true,
+			}), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+			["<C-CR>"] = function(fallback)
+				cmp.abort()
+				fallback()
+			end,
+		}),
+
 		snippet = {
 			expand = function(args)
 				require("luasnip").lsp_expand(args.body)
@@ -162,6 +179,8 @@ return function()
 		},
 		-- You should specify your *installed* sources.
 		sources = {
+			{ name = "conventionalcommits" },
+			{ name = "buffer" },
 			{ name = "nvim_lsp", max_item_count = 350 },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },
@@ -173,6 +192,8 @@ return function()
 			{ name = "buffer" },
 			{ name = "latex_symbols" },
 			{ name = "copilot" },
+			{ name = "nvim_lsp_signature_help" },
+			-- { name = "git"},
 			-- { name = "codeium" },
 			-- { name = "cmp_tabnine" },
 		},

@@ -167,14 +167,18 @@ function M.format(opts)
 					{ title = "LSP Range Format Success" }
 				)
 			end
-			return
+			vim.notify(
+				string.format("[LSP] %s: %s", client.name, client.settings),
+				vim.log.levels.INFO,
+				{ title = "LSP Range Format Success" }
+			)
+			-- return
 		end
 
 		-- Fall back to format the whole buffer (even if partial formatting failed)
 		local params = vim.lsp.util.make_formatting_params(opts.formatting_options)
 		local result, err = client.request_sync("textDocument/formatting", params, timeout_ms, bufnr)
 		if result and result.result then
-			-- TODO: Investigate why this sometimes clears the entire file in Python.
 			vim.lsp.util.apply_text_edits(result.result, bufnr, client.offset_encoding)
 			if format_notify then
 				vim.notify(

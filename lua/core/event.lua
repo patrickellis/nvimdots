@@ -119,6 +119,11 @@ function autocmd.load_autocmds()
 			{ "VimResized", "*", [[tabdo wincmd =]] },
 		},
 		ft = {
+			{
+				"FileType",
+				"gitcommit",
+				"lua require('cmp').config.sources({{ name = 'conventionalcommits' }}, {{ name = 'buffer' }})",
+			},
 			{ "FileType", "alpha", "set showtabline=0" },
 			{ "FileType", "markdown", "set wrap" },
 			{ "FileType", "make", "set noexpandtab shiftwidth=8 softtabstop=0" },

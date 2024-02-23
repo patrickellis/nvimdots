@@ -39,5 +39,7 @@ lang["chrisbra/csv.vim"] = {
 lang["hashivim/vim-terraform"] = {
 	lazy = true,
 	ft = "terraform",
+    config = require("lang.vim-terraform"),
+	event = "LspAttach",
 }
 return lang

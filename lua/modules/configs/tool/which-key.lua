@@ -20,6 +20,10 @@ return function()
 			g = {
 				name = icons.git.Git .. "Git",
 			},
+			c = {
+				name = "Git Commit",
+				c = { "<cmd>lua require('modules.utils.term').git_commit_toggle()<CR>", "Conventional Commits" },
+			},
 			l = {
 				name = icons.misc.LspAvailable .. " Lsp",
 			},

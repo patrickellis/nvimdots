@@ -29,7 +29,7 @@ _G._toggle_lazygit = function()
 			_lazygit = require("toggleterm.terminal").Terminal:new({
 				cmd = "lazygit",
 				direction = "float",
-				close_on_exit = true,
+				close_on_exit = false,
 				hidden = true,
 			})
 		end
