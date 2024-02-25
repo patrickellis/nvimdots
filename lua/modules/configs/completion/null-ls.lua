@@ -27,7 +27,7 @@ return function()
 				"javascript",
 				"typescriptreact",
 				"javascriptreact",
-				"yaml",
+				-- "yaml",
 				"html",
 				"css",
 				"scss",
@@ -36,16 +36,24 @@ return function()
 			},
 		}),
 		btns.formatting.rustfmt,
+        btns.formatting.yamlfmt.with({
+            filetypes = { "yaml" },
+            extra_args = { "--conf", "/Users/pes28/.config/yamlfmt/.yamlfmt"}
+        }),
+        btns.diagnostics.yamllint.with({
+            filetypes = { "yaml" },
+            extra_args = { "-f", "parsable" }
+        })
 	}
 	require("modules.utils").load_plugin("null-ls", {
 		border = "rounded",
-		debug = false,
+		debug = true,
 		log_level = "warn",
 		update_in_insert = false,
 		sources = sources,
 	})
 
-	require("completion.mason-null-ls").setup()
+	-- require("completion.mason-null-ls").setup()
 
 	-- Setup usercmd to register/deregister available source(s)
 	local function _gen_completion()

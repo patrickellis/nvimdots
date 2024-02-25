@@ -110,9 +110,4 @@ tool["mfussenegger/nvim-dap"] = {
 		{ "jay-babu/mason-nvim-dap.nvim" },
 	},
 }
-
-tool["christoomey/vim-tmux-navigator"] = {
-	lazy = true,
-	config = require("tool.vim-tmux-navigator"),
-}
 return tool
