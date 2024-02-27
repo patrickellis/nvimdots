@@ -177,7 +177,6 @@ local load_core = function()
 	vim.api.nvim_command("set background=" .. background)
 	vim.api.nvim_command("colorscheme " .. colorscheme)
 end
-
 load_core()
 
 -- Once you have the nvim-cmp and lspconfig setup Reference Link , Add the following to your init.lua file for Neovim to recognize the hcl and terraform filetype

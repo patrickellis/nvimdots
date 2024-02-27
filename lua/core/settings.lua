@@ -22,7 +22,7 @@ settings["format_notify"] = false
 --  > Any of the server attached to that buffer supports |DocumentRangeFormattingProvider| server capability.
 -- Otherwise Neovim would fall back to format the whole buffer, and a warning will be issued.
 ---@type boolean
-settings["format_modifications_only"] = true
+settings["format_modifications_only"] = false
 
 -- Set the format disabled directories here, files under these dirs won't be formatted on save.
 --- NOTE: Directories may contain regular expressions (grammar: vim). |regexp|
@@ -48,8 +48,43 @@ settings["diagnostics_level"] = "Hint"
 -- Set the plugins to disable here.
 -- Example: "Some-User/A-Repo"
 ---@type string[]
-settings["disabled_plugins"] = {}
+settings["disabled_plugins"] = {
+	"davidsierradz/cmp-conventionalcommits",
+	"edluffy/specs.nvim", -- This one installs an autocmd on cursor move
+	"nvim-orgmode/orgmode",
+	"nvim-treesitter/nvim-treesitter",
+	"smoka7/hop.nvim",
+	"dstein64/nvim-scrollview",
+	"numToStr/Comment.nvim",
+	"nvim-lualine/lualine.nvim",
+	"Jint-lzxy/nvim",
+	"akinsho/bufferline.nvim",
+	"dstein64/nvim-scrollview",
+	"folke/paint.nvim",
+	"karb94/neoscroll.nvim",
+	"lukas-reineke/indent-blankline.nvim",
+	"zbirenbaum/neodim",
+	"nvimtools/none-ls.nvim",
+	"hrsh7th/nvim-cmp",
+	"zbirenbaum/copilot.lua",
+	"neovim/nvim-lspconfig",
+	"nvimdev/lspsaga.nvim",
+	"joechrisellis/lsp-format-modifications.nvim",
+	"dnlhc/glance.nvim",
+	"stevearc/aerial.nvim",
+	"rainbowhxch/accelerated-jk.nvim",
+	"olimorris/persisted.nvim",
+	"m4xshen/autoclose.nvim" ,
+	"max397574/better-escape.nvim",
+	"LunarVim/bigfile.nvim",
+	"ojroques/nvim-bufdel",
+	"folke/flash.nvim",
+	"sindrets/diffview.nvim",
+	 "andymass/vim-matchup",
+	"nvim-treesitter/nvim-treesitter-context",
+	"JoosepAlviste/nvim-ts-context-commentstring",
 
+}
 -- Set it to false if you don't use nvim to open big files.
 ---@type boolean
 settings["load_big_files_faster"] = true
@@ -186,6 +221,8 @@ settings["neovide_config"] = {
 	cursor_vfx_particle_speed = 20.0,
 	cursor_vfx_particle_density = 5.0,
 	cursor_vfx_particle_lifetime = 1.2,
+    profiler = true,
+    scale_factor = 1.25,
 }
 
 -- Set the dashboard startup image here
